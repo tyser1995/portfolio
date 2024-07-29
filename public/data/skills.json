@@ -1,0 +1,63 @@
+[
+    {
+      "category": "Programming Languages",
+      "skills": [
+        { "label": "C#", "startYear": 2017, "endYear": 2021 },
+        { "label": "ASP.NET", "startYear": 2019, "endYear": 2024 },
+        { "label": "PHP", "startYear": 2021,"endYear":2024 },
+        { "label": ".NET Core", "startYear": 2023 },
+        { "label": "JavaScript", "startYear": 2021,"endYear":2024 },
+        { "label": "JQuery", "startYear": 2021,"endYear":2024 }
+      ]
+    },
+    {
+      "category": "Frameworks",
+      "skills": [
+        { "label": "Laravel", "startYear": 2021,"endYear":2024 },
+        { "label": "ReactJS", "startYear": 2021,"endYear":2023 },
+        { "label": "NextJS", "startYear": 2019,"endYear":2020 },
+        { "label": "NodeJS", "startYear": 2019,"endYear":2020 }
+      ]
+    },
+    {
+      "category": "Databases",
+      "skills": [
+        { "label": "MSSQL", "startYear": 2019,"endYear":2024 },
+        { "label": "MySQL", "startYear": 2021,"endYear":2024 }
+      ]
+    },
+    {
+      "category": "Tools",
+      "skills": [
+        { "label": " SQL Server Integration Services (SSIS)", "startYear": 2022 }
+      ]
+    },
+    {
+      "category": "API Implementation",
+      "skills": [
+        { "label": "Payment Gateway (Stripe, Airwallex)", "startYear": 2023 },
+        { "label": "Text AI Generation (ChatGPT, Google Gemini)", "startYear": 2023 },
+        { "label": "Image AI Generation (ChatGPT, MonstersAPI)", "startYear": 2023 },
+        { "label": "Social Media Platform Integration (Facebook, Instagram, Medium, Monster, Monster Doom, Telegram, Discord)", "startYear": 2023 }
+      ]
+    },
+    {
+      "category": "Others",
+      "skills": [
+        { "label": "Zoho CRM", "startYear": 2022,"endYear":2023 },
+        { "label": "Xero Application", "startYear": 2022,"endYear":2023 },
+        { "label": "Umbraco CMS", "startYear": 2021,"endYear":2022 },
+        { "label": "HTML5", "startYear": 2021,"endYear":2024 },
+        { "label": "CSS3", "startYear": 2021,"endYear":2024 }
+      ]
+    },
+    {
+      "category": "Version Control",
+      "skills": [
+        { "label": "Git", "startYear": 2020, "endYear":2021 },
+        { "label": "Tortoise SVN", "startYear": 2021, "endYear":2022 },
+        { "label": "Github", "startYear": 2021,"endYear":2024 }
+      ]
+    }
+  ]
+  
