@@ -23,6 +23,7 @@ import {
   SiJquery,
 } from "react-icons/si";
 import { GiTortoise } from "react-icons/gi";
+import Timeline from "../components/Timeline";
 
 type SkillData = typeof skillsData;
 type SkillLabel = SkillData[number]['skills'][number]['label'];
@@ -126,6 +127,10 @@ export default function Skills() {
           </div>
         ))}
       </div>
+
+      {/* My Roadmap */}
+      <h1 className="text-4xl font-bold text-center mb-8">My Development Roadmap</h1>
+      <Timeline data={skillsData} />
     </main>
   );
 }
