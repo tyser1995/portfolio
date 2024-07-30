@@ -1,63 +1,181 @@
 [
-    {
-      "category": "Programming Languages",
-      "skills": [
-        { "label": "C#", "startYear": 2017, "endYear": 2021 },
-        { "label": "ASP.NET", "startYear": 2019, "endYear": 2024 },
-        { "label": "PHP", "startYear": 2021,"endYear":2024 },
-        { "label": ".NET Core", "startYear": 2023 },
-        { "label": "JavaScript", "startYear": 2021,"endYear":2024 },
-        { "label": "JQuery", "startYear": 2021,"endYear":2024 }
-      ]
-    },
-    {
-      "category": "Frameworks",
-      "skills": [
-        { "label": "Laravel", "startYear": 2021,"endYear":2024 },
-        { "label": "ReactJS", "startYear": 2021,"endYear":2023 },
-        { "label": "NextJS", "startYear": 2019,"endYear":2020 },
-        { "label": "NodeJS", "startYear": 2019,"endYear":2020 }
-      ]
-    },
-    {
-      "category": "Databases",
-      "skills": [
-        { "label": "MSSQL", "startYear": 2019,"endYear":2024 },
-        { "label": "MySQL", "startYear": 2021,"endYear":2024 }
-      ]
-    },
-    {
-      "category": "Tools",
-      "skills": [
-        { "label": " SQL Server Integration Services (SSIS)", "startYear": 2022 }
-      ]
-    },
-    {
-      "category": "API Implementation",
-      "skills": [
-        { "label": "Payment Gateway (Stripe, Airwallex)", "startYear": 2023 },
-        { "label": "Text AI Generation (ChatGPT, Google Gemini)", "startYear": 2023 },
-        { "label": "Image AI Generation (ChatGPT, MonstersAPI)", "startYear": 2023 },
-        { "label": "Social Media Platform Integration (Facebook, Instagram, Medium, Monster, Monster Doom, Telegram, Discord)", "startYear": 2023 }
-      ]
-    },
-    {
-      "category": "Others",
-      "skills": [
-        { "label": "Zoho CRM", "startYear": 2022,"endYear":2023 },
-        { "label": "Xero Application", "startYear": 2022,"endYear":2023 },
-        { "label": "Umbraco CMS", "startYear": 2021,"endYear":2022 },
-        { "label": "HTML5", "startYear": 2021,"endYear":2024 },
-        { "label": "CSS3", "startYear": 2021,"endYear":2024 }
-      ]
-    },
-    {
-      "category": "Version Control",
-      "skills": [
-        { "label": "Git", "startYear": 2020, "endYear":2021 },
-        { "label": "Tortoise SVN", "startYear": 2021, "endYear":2022 },
-        { "label": "Github", "startYear": 2021,"endYear":2024 }
-      ]
-    }
-  ]
-  
+  {
+    "category": "Programming Languages",
+    "skills": [
+      {
+        "label": "C#",
+        "startYear": 2017,
+        "endYear": 2021,
+        "description": "Developed various applications including desktop software and backend services."
+      },
+      {
+        "label": "ASP.NET",
+        "startYear": 2019,
+        "endYear": 2024,
+        "description": "Built web applications and APIs using ASP.NET and C#."
+      },
+      {
+        "label": "PHP",
+        "startYear": 2021,
+        "endYear": 2024,
+        "description": "Worked on server-side scripting and developed dynamic websites using PHP."
+      },
+      {
+        "label": ".NET Core",
+        "startYear": 2023,
+        "description": "Developing cross-platform applications using .NET Core."
+      },
+      {
+        "label": "JavaScript",
+        "startYear": 2021,
+        "endYear": 2024,
+        "description": "Implemented interactive features and client-side logic for web applications."
+      },
+      {
+        "label": "JQuery",
+        "startYear": 2021,
+        "endYear": 2024,
+        "description": "Used jQuery for DOM manipulation and event handling in web projects."
+      }
+    ]
+  },
+  {
+    "category": "Frameworks",
+    "skills": [
+      {
+        "label": "Laravel",
+        "startYear": 2021,
+        "endYear": 2024,
+        "description": "Built web applications with Laravel, focusing on MVC architecture and RESTful APIs."
+      },
+      {
+        "label": "ReactJS",
+        "startYear": 2021,
+        "endYear": 2023,
+        "description": "Developed modern web applications using ReactJS and component-based architecture."
+      },
+      {
+        "label": "NextJS",
+        "startYear": 2019,
+        "endYear": 2020,
+        "description": "Used NextJS for server-side rendering and building SEO-friendly React applications."
+      },
+      {
+        "label": "NodeJS",
+        "startYear": 2019,
+        "endYear": 2020,
+        "description": "Implemented server-side logic and APIs using NodeJS and Express."
+      }
+    ]
+  },
+  {
+    "category": "Databases",
+    "skills": [
+      {
+        "label": "MSSQL",
+        "startYear": 2019,
+        "endYear": 2024,
+        "description": "Managed databases and developed SQL queries using Microsoft SQL Server."
+      },
+      {
+        "label": "MySQL",
+        "startYear": 2021,
+        "endYear": 2024,
+        "description": "Designed and optimized databases with MySQL for web applications."
+      }
+    ]
+  },
+  {
+    "category": "Tools",
+    "skills": [
+      {
+        "label": "SQL Server Integration Services (SSIS)",
+        "startYear": 2022,
+        "description": "Utilized SSIS for data integration and ETL processes."
+      }
+    ]
+  },
+  {
+    "category": "API Implementation",
+    "skills": [
+      {
+        "label": "Payment Gateway (Stripe, Airwallex)",
+        "startYear": 2023,
+        "description": "Integrated payment gateways for online transactions and payments."
+      },
+      {
+        "label": "Text AI Generation (ChatGPT, Google Gemini)",
+        "startYear": 2023,
+        "description": "Implemented AI-driven text generation features using ChatGPT and Google Gemini."
+      },
+      {
+        "label": "Image AI Generation (ChatGPT, MonstersAPI)",
+        "startYear": 2023,
+        "description": "Developed features for AI-based image generation with MonstersAPI."
+      },
+      {
+        "label": "Social Media Platform Integration (Facebook, Instagram, Medium, Monster, Monster Doom, Telegram, Discord)",
+        "startYear": 2023,
+        "description": "Integrated various social media platforms into applications for content sharing and communication."
+      }
+    ]
+  },
+  {
+    "category": "Others",
+    "skills": [
+      {
+        "label": "Zoho CRM",
+        "startYear": 2022,
+        "endYear": 2023,
+        "description": "Managed customer relationships and sales processes using Zoho CRM."
+      },
+      {
+        "label": "Xero Application",
+        "startYear": 2022,
+        "endYear": 2023,
+        "description": "Handled accounting and bookkeeping tasks using Xero application."
+      },
+      {
+        "label": "Umbraco CMS",
+        "startYear": 2021,
+        "endYear": 2022,
+        "description": "Developed and maintained websites using Umbraco CMS."
+      },
+      {
+        "label": "HTML5",
+        "startYear": 2021,
+        "endYear": 2024,
+        "description": "Built responsive and modern web pages using HTML5 standards."
+      },
+      {
+        "label": "CSS3",
+        "startYear": 2021,
+        "endYear": 2024,
+        "description": "Styled web pages with advanced CSS3 techniques and animations."
+      }
+    ]
+  },
+  {
+    "category": "Version Control",
+    "skills": [
+      {
+        "label": "Git",
+        "startYear": 2020,
+        "endYear": 2021,
+        "description": "Used Git for version control and collaborative development."
+      },
+      {
+        "label": "Tortoise SVN",
+        "startYear": 2021,
+        "endYear": 2022,
+        "description": "Managed source code with Tortoise SVN for version control."
+      },
+      {
+        "label": "Github",
+        "startYear": 2021,
+        "endYear": 2024,
+        "description": "Collaborated on projects and managed repositories using GitHub."
+      }
+    ]
+  }
+]
