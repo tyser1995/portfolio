@@ -1,17 +1,17 @@
 "use client"; // Mark this component as a Client Component
 
 import { CodeIcon, DesktopComputerIcon } from "@heroicons/react/solid";
-import styles from "../styles/global.css"; // Adjust the path as necessary
+import '../styles/global.css';
 import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className={styles.header}>
+    <header className="header">
       <Link href="/" legacyBehavior>
         <a href="#"
           className={`group rounded-lg px-5 py-4 transition-colors`}
         >
-          <h1 className={styles.title}>Hi! I'm Resty</h1>
+          <h1 className="title">Hi! I'm Resty</h1>
         </a>
       </Link>
      
