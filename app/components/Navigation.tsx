@@ -2,15 +2,26 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Navigation() {
   const pathname = usePathname();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleNavigationClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, path: string) => {
+    e.preventDefault();
+    setIsLoading(true);
+    window.location.href = path;
+  };
+
   const isActive = (path: string) => pathname === path;
 
   return (
     <nav className="p-10 mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
       <Link href="/about" legacyBehavior>
-        <a href="#"
+        <a
+          href="#"
+          onClick={(e) => handleNavigationClick(e, "/about")}
           className={`group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 ${
             isActive("/about") ? "bg-gray-200 dark:bg-neutral-800" : ""
           }`}
@@ -28,7 +39,9 @@ export default function Navigation() {
       </Link>
 
       <Link href="/skills" legacyBehavior>
-        <a href="#"
+        <a
+          href="#"
+          onClick={(e) => handleNavigationClick(e, "/skills")}
           className={`group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 ${
             isActive("/skills") ? "bg-gray-200 dark:bg-neutral-800" : ""
           }`}
@@ -46,7 +59,9 @@ export default function Navigation() {
       </Link>
 
       <Link href="/maintenance" legacyBehavior>
-        <a href="#"
+        <a
+          href="#"
+          onClick={(e) => handleNavigationClick(e, "/maintenance")}
           className={`group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 ${
             isActive("/projects") ? "bg-gray-200 dark:bg-neutral-800" : ""
           }`}
@@ -64,7 +79,9 @@ export default function Navigation() {
       </Link>
 
       <Link href="/maintenance" legacyBehavior>
-        <a href="#"
+        <a
+          href="#"
+          onClick={(e) => handleNavigationClick(e, "/maintenance")}
           className={`group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 ${
             isActive("/resume") ? "bg-gray-200 dark:bg-neutral-800" : ""
           }`}
@@ -80,6 +97,12 @@ export default function Navigation() {
           </p>
         </a>
       </Link>
+
+      {isLoading && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+          <div className="loader"></div>
+        </div>
+      )}
     </nav>
   );
 }
