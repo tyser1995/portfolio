@@ -73,3 +73,22 @@ canvas {
     transform: rotate(360deg);
   }
 }
+
+.group:hover .icon-water-effect {
+  animation: water-animation 0.5s ease forwards;
+}
+
+@keyframes water-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
