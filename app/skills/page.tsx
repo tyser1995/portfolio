@@ -24,27 +24,8 @@ import {
 } from "react-icons/si";
 import { GiTortoise } from "react-icons/gi";
 
-// Define the type for the skill labels
-type SkillLabel = 
-  | 'ReactJS'
-  | 'NodeJS'
-  | 'NextJS'
-  | 'HTML5'
-  | 'CSS3'
-  | 'JavaScript'
-  | 'C#'
-  | 'ASP.NET'
-  | 'Laravel'
-  | 'PHP'
-  | 'MySQL'
-  | 'MSSQL'
-  | 'Umbraco CMS'
-  | 'Zoho CRM'
-  | 'Xero Application'
-  | 'Git'
-  | 'Github'
-  | 'Tortoise SVN'
-  | 'JQuery';
+type SkillData = typeof skillsData;
+type SkillLabel = SkillData[number]['skills'][number]['label'];
 
 // Add mapping for icons
 const skillIcons: Record<SkillLabel, React.ComponentType> = {
@@ -129,7 +110,7 @@ export default function Skills() {
             <hr className="my-2" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
               {categoryData.skills.map((skill) => {
-                const Icon = skillIcons[skill.label as SkillLabel] || HiCode; // Fallback to a default icon component
+                const Icon = skillIcons[skill.label] || HiCode; // Fallback to a default icon component
                 return (
                   <ProgressBar
                     key={skill.label}
