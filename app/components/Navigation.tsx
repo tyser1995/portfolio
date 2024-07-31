@@ -4,6 +4,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
 import { FaQuestionCircle, FaUserCog, FaTools } from "react-icons/fa";
+import { MdOutlineDocumentScanner } from "react-icons/md";
+import { FaLaptopCode } from "react-icons/fa6";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -46,12 +48,7 @@ export default function Navigation() {
             {hoveredLink === "about" ? (
               <FaQuestionCircle className="w-16 h-16 text-center mr-2" />
             ) : (
-              <>
-                {"About "}
-                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                  -&gt;
-                </span>
-              </>
+              <>{"About "}</>
             )}
           </h2>
           <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -80,12 +77,7 @@ export default function Navigation() {
             {hoveredLink === "skills" ? (
               <FaUserCog className="w-16 h-16 text-center mr-2" />
             ) : (
-              <>
-                {"Skills "}
-                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                  -&gt;
-                </span>
-              </>
+              <>{"Skills "}</>
             )}
           </h2>
           <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -112,24 +104,15 @@ export default function Navigation() {
             }
           >
             {hoveredLink === "projects" ? (
-              <FaTools className="w-16 h-16 text-center mr-2" />
+              <FaLaptopCode className="w-16 h-16 text-center mr-2" />
             ) : (
-              <>
-                {"Projects "}
-                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                  -&gt;
-                </span>
-              </>
+              <>{"Projects "}</>
             )}
           </h2>
 
-          {hoveredLink === "projects" ? (
-            <>{"Under Maintenance"}</>
-          ) : (
-            <p className="m-0 max-w-[30ch] text-sm opacity-50">
-              List of projects developed.
-            </p>
-          )}
+          <p className="m-0 max-w-[30ch] text-sm opacity-50">
+            List of projects developed.
+          </p>
         </a>
       </Link>
 
@@ -151,23 +134,14 @@ export default function Navigation() {
             }
           >
             {hoveredLink === "resume" ? (
-              <FaTools className="w-16 h-16 text-center mr-2" />
+              <MdOutlineDocumentScanner className="w-16 h-16 text-center mr-2" />
             ) : (
-              <>
-                {"Resume "}
-                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                  -&gt;
-                </span>
-              </>
+              <>{"Resume "}</>
             )}
           </h2>
-          {hoveredLink === "resume" ? (
-            <>{"Under Maintenance"}</>
-          ) : (
-            <p className="m-0 max-w-[30ch] text-sm opacity-50">
-              Download my resume.
-            </p>
-          )}
+          <p className="m-0 max-w-[30ch] text-sm opacity-50">
+            Download my resume.
+          </p>
         </a>
       </Link>
 
