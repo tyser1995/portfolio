@@ -31,6 +31,7 @@
     "noEmit": true,
     "incremental": true,
     "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
   },
   "include": [
     "next-env.d.ts",

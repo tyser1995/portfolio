@@ -6,24 +6,25 @@
         "label": "C#",
         "startYear": 2017,
         "endYear": 2021,
-        "description": "Developed various applications including desktop software and backend services."
+        "description": "Developed various applications, including desktop software and backend services. Utilized object-oriented programming (OOP) principles. Created a desktop application for time attendance integrating barcode scanners, RFID readers, and biometric devices. Developed an information system."
       },
       {
         "label": "ASP.NET",
         "startYear": 2019,
         "endYear": 2024,
-        "description": "Built web applications and APIs using ASP.NET and C#."
+        "description": "Built web applications using ASP.NET MVC. Worked on projects including a student information system, Entity Framework Core, stored procedures, LINQ, data access layers, and base layers."
       },
       {
         "label": "PHP",
         "startYear": 2021,
         "endYear": 2024,
-        "description": "Worked on server-side scripting and developed dynamic websites using PHP."
+        "description": "Worked on server-side scripting and developed dynamic websites using PHP. Served as a thesis adviser, assisting students with scripting and development."
       },
       {
         "label": ".NET Core",
-        "startYear": 2023,
-        "description": "Developing cross-platform applications using .NET Core."
+        "startYear": 2022,
+        "endYear": 2023,
+        "description": "Developed cross-platform applications using .NET Core 6.0 API with MediaTR and CQRS."
       },
       {
         "label": "JavaScript",
@@ -32,7 +33,7 @@
         "description": "Implemented interactive features and client-side logic for web applications."
       },
       {
-        "label": "JQuery",
+        "label": "jQuery",
         "startYear": 2021,
         "endYear": 2024,
         "description": "Used jQuery for DOM manipulation and event handling in web projects."
@@ -58,7 +59,7 @@
         "label": "NextJS",
         "startYear": 2019,
         "endYear": 2020,
-        "description": "Used NextJS for server-side rendering and building SEO-friendly React applications."
+        "description": "Used NextJS for server-side rendering and building SEO-friendly React applications. Created a personal portfolio using this framework."
       },
       {
         "label": "NodeJS",
@@ -75,7 +76,7 @@
         "label": "MSSQL",
         "startYear": 2019,
         "endYear": 2024,
-        "description": "Managed databases and developed SQL queries using Microsoft SQL Server."
+        "description": "Managed databases and developed SQL queries using Microsoft SQL Server. Experience with indexing and stored procedures."
       },
       {
         "label": "MySQL",
@@ -91,7 +92,8 @@
       {
         "label": "SQL Server Integration Services (SSIS)",
         "startYear": 2022,
-        "description": "Utilized SSIS for data integration and ETL processes."
+        "endYear": 2024,
+        "description": "Utilized SSIS for data integration and ETL processes, including report generation and database updates."
       }
     ]
   },
@@ -101,21 +103,25 @@
       {
         "label": "Payment Gateway (Stripe, Airwallex)",
         "startYear": 2023,
-        "description": "Integrated payment gateways for online transactions and payments."
+        "endYear": 2024,
+        "description": "Integrated payment gateways for online transactions, including payment acceptance, status retrieval, and reporting."
       },
       {
         "label": "Text AI Generation (ChatGPT, Google Gemini)",
         "startYear": 2023,
+        "endYear": 2024,
         "description": "Implemented AI-driven text generation features using ChatGPT and Google Gemini."
       },
       {
         "label": "Image AI Generation (ChatGPT, MonstersAPI)",
         "startYear": 2023,
-        "description": "Developed features for AI-based image generation with MonstersAPI."
+        "endYear": 2024,
+        "description": "Developed features for AI-based image generation using MonstersAPI."
       },
       {
         "label": "Social Media Platform Integration (Facebook, Instagram, Medium, Monster, Monster Doom, Telegram, Discord)",
         "startYear": 2023,
+        "endYear": 2024,
         "description": "Integrated various social media platforms into applications for content sharing and communication."
       }
     ]
@@ -127,13 +133,13 @@
         "label": "Zoho CRM",
         "startYear": 2022,
         "endYear": 2023,
-        "description": "Managed customer relationships and sales processes using Zoho CRM."
+        "description": "Managed customer relationships and sales processes using Zoho CRM. Created invoices and integrated with Xero Application using the third-party xero2zoho.saasplugin."
       },
       {
         "label": "Xero Application",
         "startYear": 2022,
         "endYear": 2023,
-        "description": "Handled accounting and bookkeeping tasks using Xero application."
+        "description": "Handled accounting and bookkeeping tasks using Xero Application. Connected via API for invoice creation."
       },
       {
         "label": "Umbraco CMS",
@@ -171,10 +177,16 @@
         "description": "Managed source code with Tortoise SVN for version control."
       },
       {
-        "label": "Github",
-        "startYear": 2021,
+        "label": "GitHub",
+        "startYear": 2020,
         "endYear": 2024,
         "description": "Collaborated on projects and managed repositories using GitHub."
+      },
+      {
+        "label": "Azure",
+        "startYear": 2020,
+        "endYear": 2024,
+        "description": "Used Azure Cloud Services for deploying project pipelines."
       }
     ]
   }
