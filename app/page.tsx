@@ -2,7 +2,6 @@
 import Navigation from "./components/Navigation";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { AppProps } from "next/app";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
@@ -12,7 +11,7 @@ const theme = createTheme({
   },
 });
 
-export default function Home({ Component, pageProps }: AppProps) {
+export default function Home() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
