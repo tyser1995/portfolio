@@ -28,7 +28,7 @@ import Timeline from "../components/Timeline";
 type SkillData = typeof skillsData;
 type SkillLabel = SkillData[number]['skills'][number]['label'];
 
-// Add mapping for icons
+// Mapping for icons
 const skillIcons: Record<SkillLabel, React.ComponentType> = {
   ReactJS: FaReact,
   NodeJS: FaNodeJs,
@@ -53,7 +53,7 @@ const skillIcons: Record<SkillLabel, React.ComponentType> = {
 };
 
 // Helper function to calculate years of experience
-const calculateExperience = (startYear: number, endYear?: number) => {
+const calculateExperience = (startYear: number, endYear?: number): number => {
   const currentYear = new Date().getFullYear();
   return (endYear || currentYear) - startYear;
 };
@@ -76,7 +76,7 @@ const ProgressBar = ({
   const percentage = (experience / 7) * 100; // Adjust this if needed
   return (
     <div className="mb-4 flex items-center">
-      <Icon className="text-2xl mr-2" />
+      <Icon className={`${iconClassName} text-2xl mr-2`} />
       <div className="w-full">
         <div className="flex justify-between">
           <span>{label}</span>
