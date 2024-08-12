@@ -116,10 +116,10 @@ export default function Navigation() {
         </a>
       </Link>
 
-      <Link href="/maintenance" legacyBehavior>
+      <Link href="/resume" legacyBehavior>
         <a
           href="#"
-          onClick={(e) => handleNavigationClick(e, "/maintenance")}
+          onClick={(e) => handleNavigationClick(e, "/resume")}
           onMouseEnter={() => handleMouseEnter("resume")}
           onMouseLeave={handleMouseLeave}
           className={`group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 ${
