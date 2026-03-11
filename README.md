@@ -10,7 +10,8 @@ Personal portfolio website built with Next.js 14, showcasing projects, skills, a
 - **UI:** MUI (Material UI), Framer Motion
 - **Icons:** React Icons, Font Awesome, Heroicons
 - **Font:** Plus Jakarta Sans
-- **Analytics:** Google Analytics (gtag)
+- **Analytics:** Vercel Analytics + Supabase (custom page view tracking)
+- **Database:** Supabase (PostgreSQL)
 
 ## Pages
 
@@ -42,7 +43,44 @@ Skill entries are stored in `public/data/skills.json`, organized by category and
 | `endYear` | number (optional) | Year last used — omit if currently active |
 | `description` | string | Short description of usage |
 
+## Analytics & Tracking
+
+Every page visit is tracked server-side and stored in a Supabase `page_views` table alongside Vercel's built-in analytics.
+
+**Data captured per visit:**
+
+| Field | Source |
+|---|---|
+| `page` | Route pathname |
+| `ip_address` | `x-forwarded-for` header |
+| `country` / `region` / `city` | Vercel edge headers (production only) |
+| `browser` / `os` / `device_type` | Parsed from User-Agent |
+| `referrer` | `document.referrer` |
+| `screen_width` / `screen_height` | `window.screen` |
+| `session_id` | UUID persisted in `sessionStorage` |
+
+**Files:**
+
+| File | Purpose |
+|---|---|
+| `lib/supabase.ts` | Supabase client (public) and admin client (service role) |
+| `app/api/track/route.ts` | POST endpoint — inserts a row per page view |
+| `app/components/PageTracker.tsx` | Client component — fires on every route change |
+| `supabase-migration.sql` | Run once in Supabase SQL Editor to create the table |
+
 ## Getting Started
+
+1. Copy environment variables (or create `.env.local`):
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=...
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+SUPABASE_SERVICE_ROLE_KEY=...
+```
+
+2. Create the database table — run `supabase-migration.sql` in your [Supabase SQL Editor](https://supabase.com/dashboard).
+
+3. Install and run:
 
 ```bash
 npm install

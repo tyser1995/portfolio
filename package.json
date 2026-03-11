@@ -19,6 +19,7 @@
     "@heroicons/react": "^1.0.6",
     "@mui/material": "^5.16.5",
     "@mui/material-nextjs": "^5.16.4",
+    "@supabase/supabase-js": "^2.99.1",
     "@vercel/analytics": "^2.0.0",
     "framer-motion": "^11.3.19",
     "next": "14.2.5",
