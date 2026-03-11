@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import CustomCursor from "./components/CustomCursor";
 import NetworkBackground from "./components/NetworkBackground";
@@ -30,7 +29,6 @@ export default function RootLayout({
           {children}
           <Analytics />
         </PageGate>
-        <Analytics />
       </body>
     </html>
   );
