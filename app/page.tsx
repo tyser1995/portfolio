@@ -14,13 +14,11 @@ const theme = createTheme({
 
 export default function Home() {
   useEffect(() => {
-    // Load Google Tag Manager script
     const script = document.createElement("script");
     script.src = "https://www.googletagmanager.com/gtag/js?id=G-ZG4ETQG2MN";
     script.async = true;
     document.head.appendChild(script);
 
-    // Initialize gtag
     const inlineScript = document.createElement("script");
     inlineScript.innerHTML = `
       window.dataLayer = window.dataLayer || [];
@@ -39,15 +37,16 @@ export default function Home() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="relative min-h-screen">
-        <main className="flex flex-col min-h-screen items-center justify-between p-24">
+      <div className="relative min-h-screen flex flex-col">
+        <main className="relative flex flex-col flex-1 items-center justify-center gap-6 px-6 py-16 z-10">
           <Header />
+          <p className="text-slate-400 text-center max-w-xl text-base md:text-lg leading-relaxed">
+            I build modern web applications and scalable backend solutions —
+            turning ideas into clean, functional software.
+          </p>
           <Navigation />
-          <div className="flex-grow">
-            <></>
-          </div>
-          <Footer />
         </main>
+        <Footer />
       </div>
     </ThemeProvider>
   );

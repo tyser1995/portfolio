@@ -3,28 +3,16 @@
     "category": "Programming Languages",
     "skills": [
       {
-        "label": "C#",
-        "startYear": 2017,
-        "endYear": 2021,
-        "description": "Developed various applications, including desktop software and backend services. Utilized object-oriented programming (OOP) principles. Created a desktop application for time attendance integrating barcode scanners, RFID readers, and biometric devices. Developed an information system."
-      },
-      {
-        "label": "ASP.NET",
-        "startYear": 2019,
-        "endYear": 2024,
-        "description": "Built web applications using ASP.NET MVC. Worked on projects including a student information system, Entity Framework Core, stored procedures, LINQ, data access layers, and base layers."
+        "label": ".NET Core",
+        "startYear": 2022,
+        "endYear": 2023,
+        "description": "Developed cross-platform applications using .NET Core 6.0 API with MediaTR and CQRS."
       },
       {
         "label": "PHP",
         "startYear": 2021,
         "endYear": 2024,
         "description": "Worked on server-side scripting and developed dynamic websites using PHP. Served as a thesis adviser, assisting students with scripting and development."
-      },
-      {
-        "label": ".NET Core",
-        "startYear": 2022,
-        "endYear": 2023,
-        "description": "Developed cross-platform applications using .NET Core 6.0 API with MediaTR and CQRS."
       },
       {
         "label": "JavaScript",
@@ -37,12 +25,29 @@
         "startYear": 2021,
         "endYear": 2024,
         "description": "Used jQuery for DOM manipulation and event handling in web projects."
+      },
+      {
+        "label": "ASP.NET",
+        "startYear": 2019,
+        "endYear": 2024,
+        "description": "Built web applications using ASP.NET MVC. Worked on projects including a student information system, Entity Framework Core, stored procedures, LINQ, data access layers, and base layers."
+      },
+      {
+        "label": "C#",
+        "startYear": 2017,
+        "endYear": 2021,
+        "description": "Developed various applications, including desktop software and backend services. Utilized object-oriented programming (OOP) principles. Created a desktop application for time attendance integrating barcode scanners, RFID readers, and biometric devices. Developed an information system."
       }
     ]
   },
   {
     "category": "Frameworks",
     "skills": [
+      {
+        "label": "Flutter",
+        "startYear": 2024,
+        "description": "Developing cross-platform mobile and web applications using Flutter and Dart, focusing on clean UI components and integration with backend services."
+      },
       {
         "label": "Laravel",
         "startYear": 2021,
@@ -73,22 +78,32 @@
     "category": "Databases",
     "skills": [
       {
-        "label": "MSSQL",
-        "startYear": 2019,
-        "endYear": 2024,
-        "description": "Managed databases and developed SQL queries using Microsoft SQL Server. Experience with indexing and stored procedures."
+        "label": "Supabase",
+        "startYear": 2025,
+        "description": "Used Supabase as a backend-as-a-service platform — leveraging its PostgreSQL database, Edge Functions, authentication, and real-time capabilities for mobile and web projects."
       },
       {
         "label": "MySQL",
         "startYear": 2021,
         "endYear": 2024,
         "description": "Designed and optimized databases with MySQL for web applications."
+      },
+      {
+        "label": "MSSQL",
+        "startYear": 2019,
+        "endYear": 2024,
+        "description": "Managed databases and developed SQL queries using Microsoft SQL Server. Experience with indexing and stored procedures."
       }
     ]
   },
   {
     "category": "Tools",
     "skills": [
+      {
+        "label": "Google Cloud Run",
+        "startYear": 2025,
+        "description": "Deployed and managed containerized services using Google Cloud Run, handling scalable serverless workloads and backend API deployments."
+      },
       {
         "label": "SQL Server Integration Services (SSIS)",
         "startYear": 2022,
@@ -100,6 +115,11 @@
   {
     "category": "API Implementation",
     "skills": [
+      {
+        "label": "Payment Gateway (BPI, Paymaya)",
+        "startYear": 2025,
+        "description": "Integrated BPI and Paymaya payment gateways, implementing payment initiation, callback handling, transaction status verification, and reconciliation workflows for local Philippine payment solutions."
+      },
       {
         "label": "Payment Gateway (Stripe, Airwallex)",
         "startYear": 2023,
@@ -142,12 +162,6 @@
         "description": "Handled accounting and bookkeeping tasks using Xero Application. Connected via API for invoice creation."
       },
       {
-        "label": "Umbraco CMS",
-        "startYear": 2021,
-        "endYear": 2022,
-        "description": "Developed and maintained websites using Umbraco CMS."
-      },
-      {
         "label": "HTML5",
         "startYear": 2021,
         "endYear": 2024,
@@ -158,18 +172,18 @@
         "startYear": 2021,
         "endYear": 2024,
         "description": "Styled web pages with advanced CSS3 techniques and animations."
+      },
+      {
+        "label": "Umbraco CMS",
+        "startYear": 2021,
+        "endYear": 2022,
+        "description": "Developed and maintained websites using Umbraco CMS."
       }
     ]
   },
   {
     "category": "Version Control",
     "skills": [
-      {
-        "label": "Git",
-        "startYear": 2020,
-        "endYear": 2021,
-        "description": "Used Git for version control and collaborative development."
-      },
       {
         "label": "Tortoise SVN",
         "startYear": 2021,
@@ -184,9 +198,15 @@
       },
       {
         "label": "Azure",
-        "startYear": 2020,
+        "startYear": 2022,
         "endYear": 2024,
         "description": "Used Azure Cloud Services for deploying project pipelines."
+      },
+      {
+        "label": "Git",
+        "startYear": 2020,
+        "endYear": 2021,
+        "description": "Used Git for version control and collaborative development."
       }
     ]
   }

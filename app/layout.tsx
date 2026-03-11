@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "./components/CustomCursor";
+import NetworkBackground from "./components/NetworkBackground";
+import PageGate from "./components/PageGate";
+import ContactWidget from "./components/ContactWidget";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 
 export const metadata: Metadata = {
   title: "I'm Resty",
@@ -16,7 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={font.className}>
+        <PageGate>
+          <NetworkBackground />
+          <CustomCursor />
+          <ContactWidget />
+          {children}
+        </PageGate>
+      </body>
     </html>
   );
 }

@@ -1,39 +1,65 @@
-## Portfolio
-Ongoing website portfolio
+# Portfolio — Resty S. Galido
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Personal portfolio website built with Next.js 14, showcasing projects, skills, and professional experience.
+
+## Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS, Emotion
+- **UI:** MUI (Material UI), Framer Motion
+- **Icons:** React Icons, Font Awesome, Heroicons
+- **Font:** Plus Jakarta Sans
+- **Analytics:** Google Analytics (gtag)
+
+## Pages
+
+| Route | Description |
+|---|---|
+| `/` | Home — animated hero, network background, typewriter roles, and nav cards |
+| `/about` | About — bio, profile photo, and movie inspirations section |
+| `/skills` | Skills — scroll-animated progress bars by category + interactive development timeline |
+| `/projects` | Projects — live GitHub repos via GitHub API with 3D tilt card hover |
+| `/resume` | Resume — inline PDF viewer with download |
+
+## Features
+
+- **Network background** — 400-node animated canvas with spatial-grid optimization, data packets, and mouse interaction across all pages
+- **Rocket cursor** — custom SVG rocket that rotates with movement direction, flame trail, and particle explosion on click
+- **Page loader** — splash screen gate that blocks content until the page is fully loaded
+- **Navigation loader** — animated modal with sonar rings shown when switching pages
+- **Mobile navigation** — hamburger button opens a slide-in right drawer; desktop shows a 4-column grid
+- **Contact widget** — floating bottom-right widget that expands on hover with links to LinkedIn, GitHub, Viber, WhatsApp, and Email
+
+## Skills Data
+
+Skill entries are stored in `public/data/skills.json`, organized by category and sorted by `startYear` descending. Each entry has:
+
+| Field | Type | Description |
+|---|---|---|
+| `label` | string | Display name |
+| `startYear` | number | Year the skill was first used |
+| `endYear` | number (optional) | Year last used — omit if currently active |
+| `description` | string | Short description of usage |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Deployed on [Vercel](https://vercel.com). Push to `main` to trigger a production deploy.
