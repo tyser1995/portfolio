@@ -3,27 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 10, 10, 10;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(var(--background-rgb));
 }
 
 @layer utilities {
@@ -31,3 +17,65 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Gradient animated text */
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* Navigation loading spinner */
+.loader {
+  border: 6px solid rgba(255, 255, 255, 0.15);
+  border-top: 6px solid #38bdf8;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Icon hover water ripple effect */
+.group:hover .icon-water-effect {
+  animation: water-animation 0.5s ease forwards;
+}
+
+@keyframes water-animation {
+  0%   { transform: scale(1);   opacity: 1; }
+  50%  { transform: scale(1.2); opacity: 0.8; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+/* Global focus styles */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+/* Cursor is a rocket SVG — see CustomCursor.tsx */
+* { cursor: none !important; }
