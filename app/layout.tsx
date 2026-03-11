@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import CustomCursor from "./components/CustomCursor";
 import NetworkBackground from "./components/NetworkBackground";
 import PageGate from "./components/PageGate";
 import ContactWidget from "./components/ContactWidget";
-import { Analytics } from "@vercel/analytics/react";
+import PageTracker from "./components/PageTracker";
 
 const font = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
           <ContactWidget />
           {children}
           <Analytics />
+          <PageTracker />
         </PageGate>
       </body>
     </html>
