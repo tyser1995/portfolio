@@ -38,6 +38,11 @@ function parseUserAgent(ua: string) {
 }
 
 export async function POST(req: NextRequest) {
+  if (!supabaseAdmin) {
+    // Supabase env vars aren't configured — tracking is a no-op.
+    return NextResponse.json({ ok: true });
+  }
+
   try {
     const body = await req.json();
     const { page, referrer, screen_width, screen_height, session_id } = body;
