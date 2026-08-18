@@ -3,6 +3,7 @@ import Navigation from "../components/Navigation";
 
 export default function Resume() {
   const cvUrl = '/CV.pdf';
+  const cvViewUrl = '/resty-galido-portfolio.html';
   const coverLetterUrl = '/CoverLetter.pdf';
   return (
     <main className="flex min-h-screen flex-col items-center gap-6 p-6 md:p-12">
@@ -30,27 +31,14 @@ export default function Resume() {
           </div>
         </div>
 
-        {/* PDF viewer — hidden on mobile */}
-        <div className="hidden md:block w-full rounded-lg overflow-hidden border border-neutral-700">
+        <div className="w-full rounded-lg overflow-hidden border border-neutral-700">
           <iframe
             title="Resty Galido CV"
-            src={cvUrl}
+            src={cvViewUrl}
             width="100%"
             height="800px"
             style={{ border: "none" }}
           />
-        </div>
-
-        {/* Mobile fallback */}
-        <div className="md:hidden flex flex-col items-center gap-4 py-12 border border-neutral-700 rounded-lg text-center px-6">
-          <p className="text-slate-400">PDF preview is not available on mobile.</p>
-          <a
-            href={cvUrl}
-            download="CV.pdf"
-            className="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200"
-          >
-            Download CV
-          </a>
         </div>
       </div>
     </main>
