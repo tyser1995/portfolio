@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resty Galido — Full-Stack Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0F14;
+    --surface:#121924;
+    --surface-2:#1A2330;
+    --border:#26303F;
+    --text:#E7EAEE;
+    --text-dim:#8A96A6;
+    --text-faint:#5C6675;
+    --live:#3ECF8E;
+    --signal:#F2B84B;
+    --link:#6FA8FF;
+    --mono:'IBM Plex Mono', monospace;
+    --sans:'IBM Plex Sans', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--live); color:#08120D;}
+
+  a{color:var(--link); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--live); outline-offset:3px;}
+
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,15,20,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{
+    max-width:920px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-brand{
+    font-family:var(--mono); font-size:14px; font-weight:600;
+    color:var(--text); display:flex; align-items:center; gap:8px;
+  }
+  .dot-live{
+    width:8px; height:8px; border-radius:50%; background:var(--live);
+    box-shadow:0 0 0 3px rgba(62,207,142,0.15);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:0.45;}
+  }
+  .nav-links{display:flex; gap:24px; font-family:var(--mono); font-size:13px;}
+  .nav-links a{color:var(--text-dim);}
+  .nav-links a:hover{color:var(--live); text-decoration:none;}
+  @media (max-width:600px){ .nav-links{display:none;} }
+
+  /* HERO */
+  header.hero{padding:72px 0 56px; border-bottom:1px solid var(--border);}
+  .boot{
+    font-family:var(--mono); font-size:12.5px; color:var(--text-faint);
+    margin-bottom:28px; white-space:pre-wrap;
+  }
+  .boot .ok{color:var(--live);}
+  .hero h1{
+    font-family:var(--mono); font-weight:700;
+    font-size:clamp(32px, 5.5vw, 52px);
+    letter-spacing:-0.02em;
+    margin-bottom:8px;
+  }
+  .hero .role{
+    font-size:19px; color:var(--text-dim); font-weight:500; margin-bottom:20px;
+  }
+  .hero p.summary{
+    max-width:640px; color:var(--text-dim); font-size:16px; margin-bottom:28px;
+  }
+  .contact-row{display:flex; flex-wrap:wrap; gap:10px;}
+  .chip{
+    font-family:var(--mono); font-size:12.5px; color:var(--text);
+    border:1px solid var(--border); background:var(--surface);
+    padding:7px 12px; border-radius:6px; display:inline-flex; align-items:center; gap:6px;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .chip:hover{border-color:var(--live); text-decoration:none; transform:translateY(-1px);}
+
+  /* SECTION HEADERS */
+  section{padding:64px 0; border-bottom:1px solid var(--border);}
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; color:var(--signal);
+    letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px;
+  }
+  h2.section-title{
+    font-family:var(--mono); font-size:26px; font-weight:700; margin-bottom:36px;
+    letter-spacing:-0.01em;
+  }
+
+  /* EXPERIENCE LOG */
+  .log-entry{
+    display:grid; grid-template-columns:150px 1fr; gap:24px;
+    padding:22px 0; border-top:1px solid var(--border);
+  }
+  .log-entry:first-of-type{border-top:none;}
+  .log-date{
+    font-family:var(--mono); font-size:12.5px; color:var(--text-faint); padding-top:2px;
+  }
+  .log-role{font-size:17px; font-weight:600; margin-bottom:2px;}
+  .log-company{color:var(--text-dim); font-size:14.5px; margin-bottom:12px;}
+  .stack-row{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px;}
+  .tag{
+    font-family:var(--mono); font-size:11.5px; color:var(--link);
+    background:rgba(111,168,255,0.08); border:1px solid rgba(111,168,255,0.25);
+    padding:3px 8px; border-radius:4px;
+  }
+  ul.bullets{list-style:none; display:flex; flex-direction:column; gap:8px;}
+  ul.bullets li{
+    position:relative; padding-left:16px; color:var(--text-dim); font-size:14.5px;
+  }
+  ul.bullets li::before{
+    content:'▸'; position:absolute; left:0; color:var(--text-faint);
+  }
+  @media (max-width:640px){
+    .log-entry{grid-template-columns:1fr; gap:6px;}
+  }
+
+  /* MINI SYSTEM LIST (inside a log entry) */
+  .mini-systems{
+    margin-top:16px; padding-top:16px; border-top:1px dashed var(--border);
+  }
+  .mini-systems-label{
+    font-family:var(--mono); font-size:11px; color:var(--text-faint);
+    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;
+  }
+  .mini-sys{
+    padding:12px 14px; background:var(--surface); border:1px solid var(--border);
+    border-radius:8px; margin-bottom:8px;
+  }
+  .mini-sys-name{font-size:14px; font-weight:600; color:var(--text); margin-bottom:3px;}
+  .mini-sys-name .mini-sys-tag{
+    font-family:var(--mono); font-size:10.5px; color:var(--signal); font-weight:400;
+    margin-left:6px;
+  }
+  .mini-sys-desc{font-size:13px; color:var(--text-dim);}
+
+  /* PROJECTS / DEPLOYMENTS */
+  .proj-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:24px; margin-bottom:18px;
+  }
+  .proj-top{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:16px;
+    flex-wrap:wrap; margin-bottom:10px;
+  }
+  .proj-name{font-size:17px; font-weight:600;}
+  .proj-org{color:var(--text-faint); font-size:13px; margin-top:2px;}
+  .status-badge{
+    font-family:var(--mono); font-size:11px; color:var(--live);
+    background:rgba(62,207,142,0.1); border:1px solid rgba(62,207,142,0.3);
+    padding:4px 9px; border-radius:20px; display:flex; align-items:center; gap:6px;
+    white-space:nowrap;
+  }
+  .proj-desc{color:var(--text-dim); font-size:14.5px; margin:12px 0 14px;}
+  .proj-meta{
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:12px; margin-top:14px; padding-top:14px; border-top:1px solid var(--border);
+  }
+  .uptime{font-family:var(--mono); font-size:12px; color:var(--text-faint);}
+  .uptime b{color:var(--signal); font-weight:600;}
+  .note-flag{
+    font-family:var(--mono); font-size:11px; color:var(--signal); margin-top:6px;
+  }
+
+  /* SKILLS */
+  .skill-group{margin-bottom:22px;}
+  .skill-group h3{
+    font-family:var(--mono); font-size:12.5px; color:var(--text-faint);
+    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px; font-weight:600;
+  }
+  .skill-tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .skill-tags .tag{color:var(--text); background:var(--surface-2); border-color:var(--border); font-size:12.5px;}
+
+  /* EDUCATION */
+  .edu-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+  .edu-degree{font-size:16px; font-weight:600;}
+  .edu-school{color:var(--text-dim); font-size:14.5px;}
+  .edu-year{font-family:var(--mono); color:var(--text-faint); font-size:13px;}
+
+  footer{padding:56px 0 72px; text-align:center;}
+  footer .foot-name{font-family:var(--mono); font-weight:600; font-size:15px; margin-bottom:10px;}
+  footer .foot-links{display:flex; justify-content:center; gap:18px; flex-wrap:wrap; margin-top:14px; font-family:var(--mono); font-size:13px;}
+  footer .foot-note{color:var(--text-faint); font-size:12.5px; margin-top:28px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand"><span class="dot-live"></span> R. GALIDO</div>
+    <div class="nav-links">
+      <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
+      <a href="#skills">skills</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="boot">whoami<br>&gt; resty_galido — full-stack engineer, 7+ yrs in production<br>&gt; status: <span class="ok">available</span></div>
+    <h1>Resty S. Galido</h1>
+    <div class="role">Full-Stack Software Engineer — .NET · React · Laravel</div>
+    <p class="summary">I build and maintain web applications across academic and commercial settings — from university systems still running eight years after launch, to client-facing platforms handling live payment integrations. Comfortable owning a feature end to end, in Agile teams, across .NET, React, Laravel, and SQL Server.</p>
+    <div class="contact-row">
+      <a class="chip" href="mailto:restygalido05@gmail.com">✉ restygalido05@gmail.com</a>
+      <span class="chip">☎ +63 977-887-7083</span>
+      <span class="chip">📍  General Trias, Cavite</span>
+    </div>
+  </header>
+
+  <section id="experience">
+    <h2 class="section-title">Experience Log</h2>
+
+    <div class="log-entry">
+      <div class="log-date">Nov 2024 —<br>Aug 2026</div>
+      <div>
+        <div class="log-role">Full Stack Web Developer</div>
+        <div class="log-company">Quantric Enterprises Inc. (EST hours)</div>
+        <div class="stack-row">
+          <span class="tag">ReactJS</span><span class="tag">ASP.NET MVC</span><span class="tag">Azure DevOps</span><span class="tag">JIRA</span>
+        </div>
+        <ul class="bullets">
+          <li>Owned frontend bug fixes and enhancements in ReactJS, coordinating closely with backend developers on ASP.NET MVC.</li>
+          <li>Investigated, tracked, and resolved client-reported issues through Azure DevOps and JIRA.</li>
+          <li>Ran sprint work through daily Scrum, using Azure DevOps for work-item management and code collaboration.</li>
+          <li>Partnered with QA and stakeholders to validate fixes and confirm timely issue resolution.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">Aug 2024 —<br>Jun 2026</div>
+      <div>
+        <div class="log-role">Software Developer (AI Engineer)</div>
+        <div class="log-company">ZQR — a platform (its name derived from "secured") that lets enterprises and individuals exchange documents securely</div>
+        <div class="stack-row">
+          <span class="tag">Flutter</span><span class="tag">Google Cloud Run</span><span class="tag">Supabase</span><span class="tag">Claude AI</span>
+        </div>
+        <ul class="bullets">
+          <li>Resolved bugs and optimized application performance to improve usability and reliability.</li>
+          <li>Used Claude AI to speed up development workflows, debugging, and day-to-day productivity.</li>
+          <li>Acted as the main point of contact with the client on the payment process and how it would connect into their applications.</li>
+          <li>Integrated two payment methods, Maya and BPI, into the platform.</li>
+          <li>Led the BPI integration — the hardest part of the work — connecting to their API through two layers of security (asymmetric and symmetric algorithms), encrypting and decrypting data on every push and pull between the two systems.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">May 2022 —<br>Nov 2024</div>
+      <div>
+        <div class="log-role">.NET Developer <span style="color:var(--text-faint); font-weight:400; font-size:13px;">(Contractual)</span></div>
+        <div class="log-company">IT Managers, Inc.</div>
+        <div class="stack-row">
+          <span class="tag">.NET Framework MVC</span><span class="tag">SQL Server</span><span class="tag">SSIS</span><span class="tag">LINQ</span><span class="tag">EF Core</span><span class="tag">IIS</span><span class="tag">N-Layered Architecture</span>
+        </div>
+        <ul class="bullets">
+          <li>Built new applications from scratch under senior developer guidance, using N-layered architecture to separate business logic from data access.</li>
+          <li>Provided technical support, troubleshooting and resolving application issues for end users.</li>
+          <li>Used SSIS for data migration, ETL processes, and automating/scheduling recurring data import and export jobs.</li>
+          <li>Deployed and maintained web applications on IIS.</li>
+        </ul>
+        <div class="mini-systems">
+          <div class="mini-systems-label">Systems built</div>
+          <div class="mini-sys">
+            <div class="mini-sys-name">Support UPH <span class="mini-sys-tag">middleware</span></div>
+            <div class="mini-sys-desc">Loads specific parts and consolidates summarized information from the operations database. Lets users view and update details, and feeds reports to other systems.</div>
+          </div>
+          <div class="mini-sys">
+            <div class="mini-sys-name">CTARS <span class="mini-sys-tag">Centralized Training & Attendance Record System</span></div>
+            <div class="mini-sys-desc">Creates training and attendance records for every event, with a WYSIWYG editor plugin letting users design their own homepage.</div>
+          </div>
+          <div class="mini-sys">
+            <div class="mini-sys-name">Proximity Reader</div>
+            <div class="mini-sys-desc">Imports adi_csn data and converts the hexadecimal value to binary, then to decimal, to resolve the proximity number.</div>
+          </div>
+          <div class="mini-sys">
+            <div class="mini-sys-name">Report Management</div>
+            <div class="mini-sys-desc">Merges data from three related sources by item and user input, extracting and reconciling multiple spreadsheet sheets into one report.</div>
+          </div>
+          <div class="mini-sys">
+            <div class="mini-sys-name">Contingent Worker <span class="mini-sys-tag">SSIS</span></div>
+            <div class="mini-sys-desc">Updates user information by retrieving data from a network path, covering contractors, interns, and staff — new and old employees alike.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">Dec 2021 —<br>Jun 2024</div>
+      <div>
+        <div class="log-role">Web Developer <span style="color:var(--text-faint); font-weight:400; font-size:13px;">(Freelance, nightshift)</span></div>
+        <div class="log-company">Shiftleft Co. Ltd.</div>
+        <div class="stack-row">
+          <span class="tag">Laravel</span><span class="tag">ReactJS</span><span class="tag">.NET 6</span><span class="tag">REST APIs</span><span class="tag">Azure DevOps</span><span class="tag">GitHub Actions</span>
+        </div>
+        <ul class="bullets">
+          <li>Built and maintained full-stack applications across Laravel, ReactJS, and .NET 6.</li>
+          <li>Designed and integrated RESTful APIs, plus third-party integrations including Stripe, Airwallex, LinkedIn, Telegram, and Medium.</li>
+          <li>Gave daily stand-up updates directly to clients across time zones.</li>
+          <li>Directly supported clients on Zoho CRM, Leadoo CMS, and Xero at the CEO's request — tools new to me at the time, learned on the job.</li>
+        </ul>
+        <div class="mini-systems">
+          <div class="mini-systems-label">Projects led</div>
+          <div class="mini-sys">
+            <div class="mini-sys-name">iLoq Integration <span class="mini-sys-tag">smart access</span></div>
+            <div class="mini-sys-desc">Integrated our Laravel application with iLoq's smart access software, letting our system control their application through its API.</div>
+          </div>
+          <div class="mini-sys">
+            <div class="mini-sys-name">AI Prompting App <span class="mini-sys-tag">Laravel · LLM</span></div>
+            <div class="mini-sys-desc">Built a ChatGPT-style prompting application in Laravel. Researched free LLM options, used Google Search for prompting and MonsterAPI for image generation, and worked out token and compute costs by character count — sharing findings with the senior dev and CEO before the team committed to a paid LLM subscription.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">Oct 2017 —<br>Mar 2021</div>
+      <div>
+        <div class="log-role">Application Developer</div>
+        <div class="log-company">Henry Luce III Library, Central Philippine University</div>
+        <div class="stack-row">
+          <span class="tag">C#</span><span class="tag">ASP.NET Web Forms</span><span class="tag">SQL Server</span><span class="tag">IIS</span><span class="tag">WordPress</span>
+        </div>
+        <ul class="bullets">
+          <li>Built web applications from scratch based on departmental requirements.</li>
+          <li>Maintained and enhanced the Library Management System and its underlying databases.</li>
+          <li>Administered the university library's WordPress site and managed network connectivity across the main and satellite libraries.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Deployed Systems</h2>
+
+    <div class="proj-card">
+      <div class="proj-top">
+        <div>
+          <div class="proj-name">Guidance Information System (OMR + Student Web Portal)</div>
+          <div class="proj-org">Central Philippine University — Guidance Services Center</div>
+        </div>
+        <div class="status-badge"><span class="dot-live" style="width:6px;height:6px;"></span>LIVE</div>
+      </div>
+      <p class="proj-desc">A two-part system for the university's guidance office: an Optical Mark Recognition (OMR) pipeline that scans and digitizes filled-in assessment and survey sheets instead of grading them by hand, feeding results into a central database — paired with a student-facing web portal where students can view their own guidance records and results.</p>
+      <div class="proj-meta">
+        <span class="uptime" data-since="2016-02-01">Launched Feb 2016 · <b><span class="uptime-count">—</span></b> in production</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-top">
+        <div>
+          <div class="proj-name">Login/Logout Library System</div>
+          <div class="proj-org">Central Philippine University — Henry Luce III Library</div>
+        </div>
+        <div class="status-badge"><span class="dot-live" style="width:6px;height:6px;"></span>LIVE</div>
+      </div>
+      <p class="proj-desc">A check-in system for library patrons: students and faculty log their time-in and time-out at the library entrance, replacing manual sign-in sheets. Visit data feeds into reports the library administration uses to track foot traffic and resource usage.</p>
+      <div class="proj-meta">
+        <span class="uptime" data-since="2017-11-01">Launched Nov 2017 · <b><span class="uptime-count">—</span></b> in production</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-top">
+        <div>
+          <div class="proj-name">CPU Employee Login/Logout System</div>
+          <div class="proj-org">Central Philippine University, Jaro, Iloilo</div>
+        </div>
+        <div class="status-badge"><span class="dot-live" style="width:6px;height:6px;"></span>LIVE</div>
+      </div>
+      <p class="proj-desc">An HR attendance system that replaced paper logbooks — employees log time-in/time-out digitally, with timestamped records rolled up into a reporting dashboard HR uses to monitor attendance across departments.</p>
+      <div class="proj-meta">
+        <span class="uptime" data-since="2020-06-01">Launched Jun 2020 · <b><span class="uptime-count">—</span></b> in production</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Stack</h2>
+
+    <div class="skill-group">
+      <h3>Languages & Frameworks</h3>
+      <div class="skill-tags">
+        <span class="tag">C#</span><span class="tag">.NET Framework MVC</span><span class="tag">.NET 6</span>
+        <span class="tag">ASP.NET MVC</span><span class="tag">ASP.NET Web Forms</span><span class="tag">Laravel</span>
+        <span class="tag">ReactJS</span><span class="tag">Flutter</span><span class="tag">LINQ</span><span class="tag">Entity Framework Core</span><span class="tag">N-Layered Architecture</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Data</h3>
+      <div class="skill-tags">
+        <span class="tag">Microsoft SQL Server</span><span class="tag">SSIS</span><span class="tag">Supabase</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Cloud & DevOps</h3>
+      <div class="skill-tags">
+        <span class="tag">Azure DevOps</span><span class="tag">Google Cloud Run</span><span class="tag">GitHub Actions (CI/CD)</span>
+        <span class="tag">IIS</span><span class="tag">JIRA</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Integrations & Tools</h3>
+      <div class="skill-tags">
+        <span class="tag">Stripe</span><span class="tag">Airwallex</span><span class="tag">Maya</span><span class="tag">BPI</span>
+        <span class="tag">Zoho CRM</span><span class="tag">Leadoo CMS</span><span class="tag">Xero</span><span class="tag">Zapier</span><span class="tag">Umbraco</span><span class="tag">Claude AI</span><span class="tag">iLoq API</span><span class="tag">MonsterAPI</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" style="border-bottom:none; padding-bottom:0;">
+    <h2 class="section-title">Education</h2>
+    <div class="edu-row">
+      <div>
+        <div class="edu-degree">Bachelor of Science in Computer Science</div>
+        <div class="edu-school">Central Philippine University</div>
+      </div>
+      <div class="edu-year">2017</div>
+    </div>
+  </section>
+</div>
+
+<footer id="contact">
+  <div class="foot-name">Let's talk.</div>
+  <div class="foot-links">
+    <a href="mailto:restygalido05@gmail.com">restygalido05@gmail.com</a>
+    <span style="color:var(--text-faint)">·</span>
+    <span style="color:var(--text-dim)">+63 977-887-7083</span>
+  </div>
+  <div class="foot-note">References available on request.</div>
+</footer>
+
+<script>
+  function formatUptime(sinceStr){
+    const since = new Date(sinceStr);
+    const now = new Date();
+    let years = now.getFullYear() - since.getFullYear();
+    let months = now.getMonth() - since.getMonth();
+    if(months < 0){ years--; months += 12; }
+    let parts = [];
+    if(years > 0) parts.push(years + 'y');
+    parts.push(months + 'm');
+    return parts.join(' ');
+  }
+  document.querySelectorAll('.uptime').forEach(function(el){
+    const since = el.getAttribute('data-since');
+    const countEl = el.querySelector('.uptime-count');
+    if(since && countEl){ countEl.textContent = formatUptime(since); }
+  });
+</script>
+
+</body>
+</html>
